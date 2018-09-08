@@ -41,6 +41,10 @@ app.get('/', (req, res) => {
   res.json({ message: 'Chat API is ALIVE! Sultan Karybaev vseh udelal' })
 });
 
+app.get('/sultan', (req, res) => {
+    res.send('Hello Almaty')
+});
+
 /*||||||||||||||||SOCKET|||||||||||||||||||||||*/
 //Listen for connection
 var typingUsers = {};
