@@ -1,4 +1,5 @@
 adminMongo/
+.idea/
 dist/
 dev/
 staging/
@@ -11,4 +12,4 @@ dump.tar.gz
 dump/
 coverage
 *.orig
-.idea/*
+
