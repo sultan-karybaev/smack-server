@@ -37,9 +37,7 @@ export default({ config, db }) => {
   // '/v1/user/:id' - Read 1
   api.get('/:id', authenticate, (req, res) => {
     User.findById(req.params.id, (err, user) => {
-      if (err) {
-        res.status(500).json({ message: err });
-      }
+      if (err) res.status(500).json({ message: err });
       res.status(200).json(user);
     });
   });
@@ -47,17 +45,13 @@ export default({ config, db }) => {
   // '/v1/user/:id' - Update
   api.put('/:id', authenticate, (req, res) => {
     User.findById(req.params.id, (err, user) => {
-      if (err) {
-        res.status(500).json({ message: err });
-      }
+      if (err) res.status(500).json({ message: err });
       user.name = req.body.name;
       user.email = req.body.email;
       user.avatarName = req.body.avatarName;
       user.avatarColor = req.body.avatarColor;
       user.save(err => {
-        if (err) {
-          res.status(500).json({ message: err });
-        }
+        if (err) res.status(500).json({ message: err });
         res.status(200).json({ message: 'User info updated' });
       });
     });
@@ -74,7 +68,7 @@ export default({ config, db }) => {
         res.status(200).json(userData);
       });
   });
-
+//rtyrtyrty
   // '/vq/user/:id' -Delete
   api.delete('/:id', authenticate, (req, res) => {
     User.remove({
