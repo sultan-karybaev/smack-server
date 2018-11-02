@@ -32,8 +32,6 @@ notification.payload = {'messageFrom': 'Solarian Programmer'};
 
 notification.topic = "com.sultankarybaev.smack";
 
-
-
 let app = express();
 app.server = http.createServer(app);
 let io = socket(app.server);
