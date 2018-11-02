@@ -34,11 +34,12 @@ export default ({ config, db }) => {
 
   // '/v1/account/login'
   api.post('/login', (req, res, next) => {
+        console.log("Login Login Login Login")
 		UserDataExt.findUserByEmail(req.body.email, (err, userData) => {
             if (err) res.status(409).json({ message: `An error occured: ${err.message}`})
             else next()
         });
-	}, passport.authenticate('local', { session: false, scope: [], failWithError: true }), (err, req, res, next) => {
+        }, passport.authenticate('local', { session: false, scope: [], failWithError: true }), (err, req, res, next) => {
         console.log("request")
         console.log(req)
 		if (err) res.status(401).json({ message: `Email or password invalid, please check your credentials`});
