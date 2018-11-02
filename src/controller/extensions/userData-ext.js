@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import UserData from '../../model/user';
 
+mongoose.Promise = require('bluebird');
+
 class UserDataExt {
 
   static findUserByEmail(email, callback) {
