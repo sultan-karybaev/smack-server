@@ -11,6 +11,29 @@ const LocalStrategy  = require('passport-local').Strategy;
 import config from './config';
 import routes from './routes';
 
+const apn = require('apn');
+
+let options = {
+    token: {
+        key: "AuthKey_44FX93V4UB.p8",
+        keyId: "44FX93V4UB",
+        teamId: "78TPJ6Q7L6"
+    },
+    production: false
+};
+let apnProvider = new apn.Provider(options);
+let deviceToken = "1cc19290ef02d0238d49e3cf34928050f0870627a1a5a8297c8ffd20e80e217d";
+let notification = new apn.Notification();
+notification.expiry = Math.floor(Date.now() / 1000) + 24 * 3600; // will expire in 24 hours from now
+notification.badge = 2;
+notification.sound = "ping.aiff";
+notification.alert = "Hello from solarianprogrammer.com";
+notification.payload = {'messageFrom': 'Solarian Programmer'};
+
+notification.topic = "com.sultankarybaev.smack";
+
+
+
 let app = express();
 app.server = http.createServer(app);
 let io = socket(app.server);
@@ -99,6 +122,10 @@ io.on('connection', function(client) {
       console.log('new message sent');
 
       io.emit("messageCreated",  msg.messageBody, msg.userId, msg.channelId, msg.userName, msg.userAvatar, msg.userAvatarColor, msg.id, msg.timeStamp);
+        apnProvider.send(notification, deviceToken).then( result => {
+            console.log(result);
+        });
+        apnProvider.shutdown();
     });
   });
 });
