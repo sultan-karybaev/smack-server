@@ -15,7 +15,7 @@ const apn = require('apn');
 
 let options = {
     token: {
-        key: "AuthKey_44FX93V4UB.p8",
+        key: "/Users/sultankarybaev/Desktop/mac-chat-api-master/src/AuthKey_44FX93V4UB.p8",
         keyId: "44FX93V4UB",
         teamId: "78TPJ6Q7L6"
     },
