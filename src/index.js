@@ -13,9 +13,12 @@ import routes from './routes';
 
 const apn = require('apn');
 
+console.log("hello")
+console.log(__dirname)
+
 let options = {
     token: {
-        key: "/Users/sultankarybaev/Desktop/mac-chat-api-master/src/AuthKey_44FX93V4UB.p8",
+        key: __dirname + "/AuthKey_44FX93V4UB.p8",
         keyId: "44FX93V4UB",
         teamId: "78TPJ6Q7L6"
     },
