@@ -2,6 +2,8 @@ import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import passport from 'passport';
+import path from 'path'
+import logger from 'morgan'
 import socket from 'socket.io';
 import Message from './model/message';
 import Channel from './model/channel';
@@ -41,12 +43,13 @@ let io = socket(app.server);
 
 //middleware
 //parse application/json
-app.use(bodyParser.json({
-  limit: config.bodyLimit
-}));
+app.use(logger('dev'))
+app.use(express.static(path.join(__dirname)));
+app.use(bodyParser.json({limit: config.bodyLimit}));
 
 //passport config
 app.use(passport.initialize());
+
 let Account = require('./model/account');
 passport.use(new LocalStrategy({
   usernameField: 'email',
