@@ -127,6 +127,7 @@ io.on('connection', function(client) {
 
       io.emit("messageCreated",  msg.messageBody, msg.userId, msg.channelId, msg.userName, msg.userAvatar, msg.userAvatarColor, msg.id, msg.timeStamp);
         notification.alert = msg.messageBody
+        console.log(notification)
         apnProvider.send(notification, deviceToken).then( result => {
             console.log(result);
         });
