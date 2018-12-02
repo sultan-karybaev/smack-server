@@ -65,9 +65,18 @@
 
   app.get('/youtube_kinoogon_videoids', (req, res) => {
     res.json({
-        videoidArray: ["WoVOP8upc58", "GZQIntBz2eI", "0cljQstOKR4", "pMonTywrze8", "PzW30e8MDEA", "SBGbWEPY4tY", "nmXJOLXcIjM",
-            "qz_l1eBa_EM", "k97xoEZnq7Y", "n3JfEjz1UZs"
-        ]
+        videoidArray: [
+            {title: "ТОП-10 | БУДУЩИЕ ЗВЕЗДЫ ГОЛЛИВУДА", image: "https://i.ytimg.com/vi/WoVOP8upc58/hqdefault.jpg"},
+      {title: "ЛЕДЕНЯЩИЕ ДУШУ ПРИКЛЮЧЕНИЯ САБРИНЫ [РЕЙТИНГ СЕРИАЛОВ]", image: "https://i.ytimg.com/vi/GZQIntBz2eI/hqdefault.jpg"},
+      {title: "КАК ИСЧЕЗ РУПЕРТ ГРИНТ [ПОЛНАЯ ХРОНОЛОГИЯ]", image: "https://i.ytimg.com/vi/0cljQstOKR4/hqdefault.jpg"},
+      {title: "ВСЕЛЕННАЯ ГАРРИ ПОТТЕРА: ОТ ХУДШЕГО ФИЛЬМА К ЛУЧШЕМУ", image: "https://i.ytimg.com/vi/pMonTywrze8/hqdefault.jpg"},
+      {title: "ПАМЯТИ СТЭНА ЛИ. 7 ЛУЧШИХ КАМЕО И 7 ЛУЧШИХ ГЕРОЕВ", image: "https://i.ytimg.com/vi/PzW30e8MDEA/hqdefault.jpg"},
+      {title: "СОРВИГОЛОВА 3 СЕЗОН [РЕЙТИНГ СЕРИАЛОВ]", image: "https://i.ytimg.com/vi/SBGbWEPY4tY/hqdefault.jpg"},
+      {title: "ЧЕГО БОЯТСЯ В ГОЛЛИВУДЕ? 17 САМЫХ СТРАННЫХ ФОБИЙ АКТЕРОВ И РЕЖИССЕРОВ", image: "https://i.ytimg.com/vi/nmXJOLXcIjM/hqdefault.jpg"},
+      {title: "12 ЖУТКИХ ФАНАТСКИХ ТЕОРИЙ О КУЛЬТОВЫХ ФИЛЬМАХ", image: "https://i.ytimg.com/vi/qz_l1eBa_EM/hqdefault.jpg"},
+      {title: "КАКИМ БУДЕТ СЕРИАЛ ВЕДЬМАК [ПО СЕКРЕТУ]", image: "https://i.ytimg.com/vi/k97xoEZnq7Y/hqdefault.jpg"},
+      {title: "ТОП-10 | ЛУЧШИЕ РОЛИ МУЗЫКАНТОВ В КИНО", image: "https://i.ytimg.com/vi/n3JfEjz1UZs/hqdefault.jpg"},
+  ]
     })
   })
 
