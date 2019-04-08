@@ -38,6 +38,7 @@
   app.use(express.static(path.join(__dirname)));
   app.use(bodyParser.json({limit: config.bodyLimit}));
 
+  console.log(path.join(__dirname))
   //passport config
   app.use(passport.initialize());
 
@@ -134,7 +135,7 @@
         console.log('new message sent');
 
         io.emit("messageCreated",  msg.messageBody, msg.userId, msg.channelId, msg.userName, msg.userAvatar, msg.userAvatarColor, msg.id, msg.timeStamp);
-          let deviceToken = "1cc19290ef02d0238d49e3cf34928050f0870627a1a5a8297c8ffd20e80e217d";
+          let deviceToken = "29ea861b7e12a4dfd256a83ac6c675e54862083efa83c29fbe475ba255a77a16";
           let notification = new apn.Notification();
           notification.expiry = Math.floor(Date.now() / 1000) + 24 * 3600; // will expire in 24 hours from now
           notification.badge = 2;
